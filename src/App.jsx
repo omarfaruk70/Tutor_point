@@ -4,23 +4,38 @@ import logo from "/logo.png";
 import { FaCode, FaRegUserCircle } from "react-icons/fa";
 import { IoHomeOutline, IoCalendarClearOutline } from "react-icons/io5";
 import { AiOutlineMessage } from "react-icons/ai";
-
-
+import Statistics from "./Components/Statistics";
+import Sessions from "./Components/Sessions";
 
 function App() {
   const li = (
     <>
       <li className="hover:border-b-2 py-3 px-4 rounded-sm transition-all border-yellow-500">
-        <Link to={"/"}> <IoHomeOutline className="text-xl md:text-3xl"/> Home</Link>
+        <Link to={"/"}>
+          {" "}
+          <IoHomeOutline className="text-xl md:text-3xl md:font-semibold" />{" "}
+          Home
+        </Link>
       </li>
       <li className="hover:border-b-2 py-3 px-4 rounded-sm transition-all border-yellow-500">
-        <Link to={"/"}><IoCalendarClearOutline className="text-xl md:text-3xl"/> Schedule</Link>
+        <Link to={"/"}>
+          <IoCalendarClearOutline className="text-xl md:text-3xl md:font-semibold" />{" "}
+          Schedule
+        </Link>
       </li>
       <li className="hover:border-b-2 py-3 px-4 rounded-sm transition-all border-yellow-500">
-        <Link to={"/"}> <AiOutlineMessage className="text-xl md:text-3xl"/> Messages</Link>
+        <Link to={"/"}>
+          {" "}
+          <AiOutlineMessage className="text-xl md:text-3xl md:font-semibold" />
+          Messages
+          <h2 className="text-6xl -mt-9 font-bold text-yellow-500">.</h2>
+        </Link>
       </li>
       <li className="hover:border-b-2 py-3 px-4 rounded-sm transition-all border-yellow-500">
-        <Link to={"/"}><FaRegUserCircle className="text-xl md:text-3xl"/> students</Link>
+        <Link to={"/"}>
+          <FaRegUserCircle className="text-xl md:text-3xl md:font-semibold" />{" "}
+          Students
+        </Link>
       </li>
     </>
   );
@@ -54,16 +69,13 @@ function App() {
             className="drawer-overlay"
           ></label>
           <ul className="menu p-4 md:w-80 min-h-full bg-base-200 text-base-content">
-            {/* Sidebar content here */}
-            {/* <li>
-              <a>Sidebar Item 1</a>
-            </li>
-            <li>
-              <a>Sidebar Item 2</a>
-            </li> */}
             {li}
           </ul>
         </div>
+      </div>
+      <div className="px-14 bg-slate-100 space-y-40 md:space-y-32">
+        <Statistics></Statistics>
+        <Sessions></Sessions>
       </div>
     </>
   );
