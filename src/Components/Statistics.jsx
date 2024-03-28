@@ -124,7 +124,7 @@ const Statistics = () => {
               value="39"
               max="100"
             ></progress>
-            <div className="flex justify-around mx-8">
+            <div className="flex justify-around">
               <h2 className="font-bold text-black">9 / 40</h2>Hours
               <div className="text-yellow-500 flex items-center gap-3 font-bold">
                 <LiaCrownSolid className="font-extrabold text-2xl" />

@@ -17,8 +17,8 @@ const Sessions = () => {
       {
         breakpoint: 1024,
         settings: {
-          slidesToShow: 3,
-          slidesToScroll: 3,
+          slidesToShow: 2,
+          slidesToScroll: 2,
           infinite: true,
         //   dots: true,
         },
@@ -45,7 +45,7 @@ const Sessions = () => {
       <h2 className="text-2xl font-bold py-6 px-5">Upcomming Sessions</h2>
       <div className="slider-container px-4">
         <Slider {...settings}>
-          <div style={{ marginRight: "20px" }}
+          <div
             className="bg-[#235940] text-white rounded-lg slick-slide"
           >
             <div className="flex justify-between px-6 py-3">
@@ -71,7 +71,7 @@ const Sessions = () => {
               </p>
             </div>
           </div>
-          <div className="border-2 rounded-lg">
+          <div className="border-2 slick-slide rounded-lg">
             <div className="flex justify-between px-6 py-3">
               <div>
                 <h2 className="text-2xl">Mathematic</h2>
@@ -99,7 +99,7 @@ const Sessions = () => {
               </p>
             </div>
           </div>
-          <div className="border-2 rounded-lg">
+          <div className="border-2 slick-slide rounded-lg">
             <div className="flex justify-between px-6 py-3">
               <div>
                 <h2 className="text-2xl">Mathematic</h2>
@@ -127,7 +127,7 @@ const Sessions = () => {
               </p>
             </div>
           </div>
-          <div className="border-2 rounded-lg">
+          <div className="border-2 slick-slide rounded-lg">
             <div className="flex justify-between px-6 py-3">
               <div>
                 <h2 className="text-2xl">Mathematic</h2>

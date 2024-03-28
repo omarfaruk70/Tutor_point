@@ -6,6 +6,7 @@ import { IoHomeOutline, IoCalendarClearOutline } from "react-icons/io5";
 import { AiOutlineMessage } from "react-icons/ai";
 import Statistics from "./Components/Statistics";
 import Sessions from "./Components/Sessions";
+import Survey from "./Components/Survey";
 
 function App() {
   const li = (
@@ -76,6 +77,7 @@ function App() {
       <div className="px-14 bg-slate-100 space-y-40 md:space-y-32">
         <Statistics></Statistics>
         <Sessions></Sessions>
+        <Survey></Survey>
       </div>
     </>
   );
