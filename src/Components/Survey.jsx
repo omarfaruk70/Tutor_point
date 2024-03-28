@@ -1,4 +1,4 @@
-const Survery = () => {
+const Survey = () => {
     return (
         <div>
             
@@ -6,4 +6,4 @@ const Survery = () => {
     );
 };
 
-export default Survery;
+export default Survey;
