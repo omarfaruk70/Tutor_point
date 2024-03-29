@@ -40,7 +40,7 @@ function App() {
   );
   return (
     <>
-      <div className="drawer">
+      <div className="drawer z-100">
         <input id="my-drawer" type="checkbox" className="drawer-toggle" />
         <div className="drawer-content flex items-center md:gap-12 md:px-10  shadow-sm">
           {/* Page content here */}
@@ -61,13 +61,13 @@ function App() {
             <Navbar></Navbar>
           </div>
         </div>
-        <div className="drawer-side">
+        <div className="drawer-side z-10">
           <label
             htmlFor="my-drawer"
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu p-4 md:w-60 min-h-full bg-slate-700 text-white">
+          <ul className="menu p-4 md:w-60 min-h-full bg-slate-700 z-1 text-white">
             {li}
           </ul>
         </div>
