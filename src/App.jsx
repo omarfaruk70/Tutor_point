@@ -13,7 +13,6 @@ function App() {
     <>
       <li className="hover:border-b-2 py-3 px-4 rounded-sm transition-all border-yellow-500">
         <Link to={"/"}>
-          {" "}
           <IoHomeOutline className="text-xl md:text-3xl md:font-semibold" />{" "}
           Home
         </Link>
@@ -25,8 +24,7 @@ function App() {
         </Link>
       </li>
       <li className="hover:border-b-2 py-3 px-4 rounded-sm transition-all border-yellow-500">
-        <Link to={"/"}>
-          {" "}
+        <Link to={"/messages"}>
           <AiOutlineMessage className="text-xl md:text-3xl md:font-semibold" />
           Messages
           <h2 className="text-6xl -mt-9 font-bold text-yellow-500">.</h2>
@@ -69,7 +67,7 @@ function App() {
             aria-label="close sidebar"
             className="drawer-overlay"
           ></label>
-          <ul className="menu p-4 md:w-80 min-h-full bg-base-200 text-base-content">
+          <ul className="menu p-4 md:w-60 min-h-full bg-slate-700 text-white">
             {li}
           </ul>
         </div>

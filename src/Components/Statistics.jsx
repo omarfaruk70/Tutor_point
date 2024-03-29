@@ -70,13 +70,13 @@ const Statistics = () => {
     },
   ];
   return (
-    <div className="flex flex-col md:justify-evenly md:flex-row gap-2 md:gap-6 h-[500px] md:w-full">
+    <div className="flex flex-col lg:flex-row md:justify-evenly gap-2 md:gap-6 h-[500px] md:w-full">
       <div className="flex flex-col items-center">
         <div className="flex w-full justify-around p-4">
-          <h2 className="text-3xl font-bold">Tutoring Statistics</h2>
+          <h2 className="md:text-3xl font-bold">Tutoring Statistics</h2>
           <div className="flex items-center gap-3 border-2 rounded-xl px-2 py-1">
           <LiaCalendarAltSolid className="text-3xl font-bold"/>
-          <select className="text-2xl bg-transparent font-bold" defaultValue={'default'}>
+          <select className="md:text-2xl bg-transparent font-bold" defaultValue={'default'}>
             <option value="">This week</option>
             <option value="">Last week</option>
           </select>

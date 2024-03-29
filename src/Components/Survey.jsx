@@ -111,6 +111,27 @@ const Survey = () => {
               </p>
             </div>
           </div>
+          <div className="border-2 slick-slide rounded-lg">
+            <div className="flex justify-between px-6 py-3">
+              <div>
+                <h2 className="text-2xl">Mathematic</h2>
+                <p>Theorema Pytagoras 2</p>
+              </div>
+              <div className="h-12 w-12 border-4 text-center rounded-full flex justify-center items-center bg-white ">
+                    <h2 className="text-2xl font-bold text-slate-400">TR</h2>
+                  </div>
+            </div>
+            <div className="flex justify-between items-center px-6 py-4">
+              <div className="gap-3 px-3 py-2 rounded-lg ">
+                <div className="flex items-center gap-3">
+                  <CiCalendar /> Last Week
+                </div>
+              </div>
+              <p className="bg-transparent text-green-500 px-5 py-2 rounded-full">
+                Filled. Thanks
+              </p>
+            </div>
+          </div>
         </Slider>
       </div>
     </div>
