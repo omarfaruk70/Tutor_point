@@ -2,9 +2,11 @@ import { CiCalendar } from "react-icons/ci";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useState } from "react";
+import { CiCirclePlus, CiTrash } from "react-icons/ci";
 
 const Schedule = () => {
   const [startDate, setStartDate] = useState(new Date());
+  const [addMore, setAddMore] = useState([{ id: Date.now() }]);
   const getHours = () => {
     const hours = [];
     for (let i = 1; i <= 12; i++) {
@@ -37,6 +39,13 @@ const Schedule = () => {
       day: "numeric",
     });
   };
+
+  const handleDuplicate = () => {
+    setAddMore([...addMore, { id: Date.now() }]);
+  }
+  const handleRemove = (id) => {
+    setAddMore(addMore.filter((div) => div.id !== id));
+  }
 
   return (
     <div>
@@ -76,64 +85,85 @@ const Schedule = () => {
               <div>
                 <p>Select the available hour</p>
                 <h2 className="text-sm mt-6">{formatDate(startDate)}</h2>
-                <div className="flex flex-col md:flex-col lg:flex-row gap-3 lg:gap-5 items-center">
-                  <div className="flex gap-3 mt-2 border-2 px-3 rounded-lg">
-                    <div className="hours">
-                      <select defaultValue={"DEFAULT"} name="" id="">
-                        <option disabled value={"DEFAULT"}>
-                          Hour
-                        </option>
-                        {getHours()}
-                      </select>
+                {addMore?.map((elem) => (
+                  <div
+                    key={elem.id}
+                    className="willDuplicate flex flex-col md:flex-col lg:flex-row gap-3 lg:gap-5 items-center"
+                  >
+                    <div className="flex gap-3 mt-2 border-2 px-3 rounded-lg">
+                      <div className="hours">
+                        <select defaultValue={"DEFAULT"} name="" id="">
+                          <option disabled value={"DEFAULT"}>
+                            Hour
+                          </option>
+                          {getHours()}
+                        </select>
+                      </div>
+                      <div className="mins">
+                        <select defaultValue={"Mins"} name="" id="">
+                          <option disabled value="Mins">
+                            Mins
+                          </option>
+                          {getMins()}
+                        </select>
+                      </div>
+                      <div className="AM/PM">
+                        <select defaultValue={"AM/PM"}>
+                          <option disabled value="AM/PM">
+                            AM/PM
+                          </option>
+                          <option value="AM">AM</option>
+                          <option value="PM">PM</option>
+                        </select>
+                      </div>
                     </div>
-                    <div className="mins">
-                      <select defaultValue={"Mins"} name="" id="">
-                        <option disabled value="Mins">
-                          Mins
-                        </option>
-                        {getMins()}
-                      </select>
+                    <h2> To </h2>
+                    <div className="flex gap-3 mt-2 border-2 px-3 rounded-lg">
+                      <div className="hours">
+                        <select defaultValue={"DEFAULT"} name="" id="">
+                          <option disabled value={"DEFAULT"}>
+                            Hour
+                          </option>
+                          {getHours()}
+                        </select>
+                      </div>
+                      <div className="mins">
+                        <select defaultValue={"Mins"} name="" id="">
+                          <option disabled value="Mins">
+                            Mins
+                          </option>
+                          {getMins()}
+                        </select>
+                      </div>
+                      <div className="AM/PM">
+                        <select defaultValue={"AM/PM"}>
+                          <option disabled value="AM/PM">
+                            AM/PM
+                          </option>
+                          <option value="AM">AM</option>
+                          <option value="PM">PM</option>
+                        </select>
+                      </div>
                     </div>
-                    <div className="AM/PM">
-                      <select defaultValue={"AM/PM"}>
-                        <option disabled value="AM/PM">
-                          AM/PM
-                        </option>
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                      </select>
-                    </div>
+                    <CiTrash onClick={() => handleRemove(elem.id)} className="text-xl mt-2 text-red-500 flex justify-center items-center" />
                   </div>
-                  <h2> To </h2>
-                  <div className="flex gap-3 mt-2 border-2 px-3 rounded-lg">
-                    <div className="hours">
-                      <select defaultValue={"DEFAULT"} name="" id="">
-                        <option disabled value={"DEFAULT"}>
-                          Hour
-                        </option>
-                        {getHours()}
-                      </select>
-                    </div>
-                    <div className="mins">
-                      <select defaultValue={"Mins"} name="" id="">
-                        <option disabled value="Mins">
-                          Mins
-                        </option>
-                        {getMins()}
-                      </select>
-                    </div>
-                    <div className="AM/PM">
-                      <select defaultValue={"AM/PM"}>
-                        <option disabled value="AM/PM">
-                          AM/PM
-                        </option>
-                        <option value="AM">AM</option>
-                        <option value="PM">PM</option>
-                      </select>
-                    </div>
-                  </div>
+                ))}
+                <div
+                  onClick={handleDuplicate}
+                  className="w-full bg-emerald-800 text-white rounded-full flex justify-center items-center p-1 my-2"
+                >
+                  <CiCirclePlus className="text-3xl font-bold rounded-full mr-3" />
+                  Add More
                 </div>
               </div>
+            </div>
+            <div className="flex gap-6 px-10 mt-5">
+              <button className="btn w-1/2 bg-red-500 text-white">
+                Cancel
+              </button>
+              <button className="btn w-1/2 bg-emerald-800 text-white">
+                Save
+              </button>
             </div>
           </div>
         </dialog>
